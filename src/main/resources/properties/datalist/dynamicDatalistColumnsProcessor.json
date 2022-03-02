@@ -1,0 +1,41 @@
+[
+    {
+        "title": "@@org.joget.marketplace.dynamicDatalistColumnProcessor.config@@",
+        "properties": [
+            {
+                "name": "sql",
+                "label": "@@org.joget.marketplace.dynamicDatalistColumnProcessor.sql@@",
+                "description": "@@org.joget.marketplace.dynamicDatalistColumnProcessor.sql.desc@@",
+                "type": "codeeditor",
+                "mode": "sql",
+                "required": "true"
+            },
+            {
+                "name": "mp_column_id",
+                "label": "@@org.joget.marketplace.dynamicDatalistColumnProcessor.m_id@@",
+                "description": "@@org.joget.marketplace.dynamicDatalistColumnProcessor.m_id.desc@@",
+                "type": "textfield",
+                "required": "true"
+            },
+            {
+                "name": "bypass",
+                "label": "@@org.joget.marketplace.dynamicDatalistColumnProcessor.bypass@@",
+                "description": "@@org.joget.marketplace.dynamicDatalistColumnProcessor.bypass.desc@@",
+                "type": "checkbox",
+                "value": "false",
+                "options": [{
+                    "value": "true",
+                    "label": ""
+                }]
+            },
+            {
+                "name": "actual_databinder",
+                "label": "@@dbuilder.selectBinder@@",
+                "type": "elementselect",
+                "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions",
+                "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.datalist.model.DataListBinder&exclude=org.joget.datalist.DynamicColumnsDatalistBinder",
+                "required": "true"
+            }
+        ]
+    }
+]
